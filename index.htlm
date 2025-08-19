@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random 10 Số từ 1 đến 80</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        #result {
+            font-size: 24px;
+            color: #e44d26;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random 10 Số từ 1 đến 80</h1>
+        <div id="result">-</div>
+        <button onclick="randomNumbers()">Random</button>
+    </div>
+
+    <script>
+        function randomNumbers() {
+            const min = 1;
+            const max = 80;
+            let numbers = new Set(); // Sử dụng Set để đảm bảo số không trùng lặp
+            while (numbers.size < 10) {
+                const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+                numbers.add(randomNum);
+            }
+            const result = [...numbers].sort((a, b) => a - b).join(', '); // Sắp xếp số tăng dần
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>
