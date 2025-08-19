@@ -45,7 +45,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Random 10 Số từ 1 đến 80</h1>
+        <h1>Lucky Number : 10 Số từ 1 đến 100</h1>
         <div id="result">-</div>
         <button onclick="randomNumbers()">Random</button>
     </div>
@@ -64,4 +64,5 @@
         }
     </script>
 </body>
+
 </html>
